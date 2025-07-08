@@ -55,7 +55,6 @@ btn.addEventListener('click', async () => {
 
 })
 
-window.location.href = login.html
 google.addEventListener('click', async () => {
   await client.auth.signInWithOAuth({
     provider: 'google',
