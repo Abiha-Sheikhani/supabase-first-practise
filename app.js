@@ -50,7 +50,9 @@ btn.addEventListener('click', async () => {
       showConfirmButton: false,
       timer: 1500
     });
-
+    setTimeout(() => {
+      window.location.href = 'post.html';
+    }, 1500)
   }
 
 })

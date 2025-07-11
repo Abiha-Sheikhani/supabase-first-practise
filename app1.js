@@ -39,10 +39,13 @@ console.log(data);
   else {
     Swal.fire({
       icon: "success",
-      title: "Signup Successfully!",
+      title: "Login Successfully!",
       showConfirmButton: false,
       timer: 1500
     });
+    setTimeout(() => {
+      window.location.href = 'post.html';
+    }, 1500)
 
   }
   
