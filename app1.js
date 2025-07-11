@@ -19,7 +19,7 @@ let password = document.getElementById('password').value
     Swal.fire({
       icon: "warning",
       title: "Oops...",
-      text: "Please fill all the fields first!",
+      text: "Please fill all the fields first!"
     });
   }
   
