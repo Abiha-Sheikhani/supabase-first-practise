@@ -12,7 +12,7 @@ console.log(client);
 
 let loginBtn = document.getElementById('login-btn')
 let email = document.getElementById('email').value
-let password = document.getElementById('password').value
+let password = document.getElementById('password')
 loginBtn &&
   loginBtn.addEventListener('click', async ()=>{
 let email = document.getElementById('email').value
@@ -45,16 +45,13 @@ console.log(data);
       showConfirmButton: false,
       timer: 1500
     });
-<<<<<<< HEAD
+
    setTimeout(() => {
       window.location.href = 'post.html';
     }, 1500)
-=======
-    setTimeout(() => {
-      window.location.href = 'post.html';
-    }, 1500)
 
->>>>>>> ec0f4b101fc7e29c9b3538c07c91cbaf4adb2593
+
+
   }
   
 })
