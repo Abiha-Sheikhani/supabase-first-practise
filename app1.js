@@ -1,4 +1,4 @@
- const supabaseUrl = "https://ewvbudyibudldcmyiwtx.supabase.co"
+const supabaseUrl = "https://ewvbudyibudldcmyiwtx.supabase.co"
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3dmJ1ZHlpYnVkbGRjbXlpd3R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2MzkyMzIsImV4cCI6MjA2NzIxNTIzMn0.w96hQQjcGsQYUa91qe3MTntyqfFBAWqadxNEDsB9GVc"
 
@@ -8,11 +8,13 @@ const client = createClient(supabaseUrl, supabaseKey)
 console.log(createClient)
 console.log(client);
 
- let btn1 = document.getElementById('login-btn')
+
+
+let loginBtn = document.getElementById('login-btn')
 let email = document.getElementById('email').value
 let password = document.getElementById('password').value
-
-btn1.addEventListener('click', async ()=>{
+loginBtn &&
+  loginBtn.addEventListener('click', async ()=>{
 let email = document.getElementById('email').value
 let password = document.getElementById('password').value
   if ( email === "" && password === "") {
@@ -43,8 +45,31 @@ console.log(data);
       showConfirmButton: false,
       timer: 1500
     });
-
+   setTimeout(() => {
+      window.location.href = 'post.html';
+    }, 1500)
   }
   
 })
 
+google.addEventListener('click', async () => {
+  await client.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+					redirectTo: window.location.origin + '/post.html',
+					queryParams: { access_type: 'offline', prompt: 'consent' },
+				},
+  })
+})
+let eye = document.getElementById('toggle-password')
+eye.addEventListener('click',()=>{
+ eye.classList.toggle('disappear')
+ if(eye.classList.contains('disappear')){
+  password.type = "text"
+  eye.innerText = "visibility"
+ }
+ else{
+  eye.innerHTML = "visibility_off"
+   password.type = "password"
+ }
+})

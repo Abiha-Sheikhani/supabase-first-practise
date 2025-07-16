@@ -13,6 +13,7 @@ body{
 .wrapper{
     border: 3px solid rgba(179, 177, 177, 0.562);
     padding: 30px;
+   
 }
 
 h1{
@@ -59,4 +60,25 @@ p{
     background-color: #1975D2;
     color: white;
     margin-top: 15px;
+}
+.password-wrapper {
+    position: relative;
+    width: 350px;
+    margin: 20px 0;
+}
+
+.password-wrapper input {
+    width: 350px;
+    border: none;
+    border-bottom: 1px solid rgba(169, 168, 168, 0.704);
+}
+
+.password-wrapper .material-symbols-outlined {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    color: #555;
 }

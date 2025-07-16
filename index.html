@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,9 +17,13 @@
         <input type="text" id="name" placeholder="Name">
     <br>
         <input type="email" id="email" placeholder="Email">
-    <br>
-        <input type="password" id="password" placeholder="Password" >
-    <br>
+
+   <div class="password-wrapper">
+    <input type="password" id="password" placeholder="Password">
+    <span class="material-symbols-outlined" id="toggle-password">
+visibility_off
+</span>
+</div>
     
     
     <button id="signUp-btn">Sign Up</button>

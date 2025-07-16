@@ -8,11 +8,11 @@ const client = createClient(supabaseUrl, supabaseKey)
 console.log(createClient)
 console.log(client);
 
-
-let btn = document.getElementById('signUp-btn')
+//  signup code
+let signupBtn = document.getElementById('signUp-btn')
 let google = document.getElementById('google')
-
-btn.addEventListener('click', async () => {
+signupBtn &&
+ signupBtn.addEventListener('click', async () => {
   let username = document.getElementById('name').value
   let email = document.getElementById('email').value
   let password = document.getElementById('password').value
@@ -50,6 +50,9 @@ btn.addEventListener('click', async () => {
       showConfirmButton: false,
       timer: 1500
     });
+    setTimeout(() => {
+      window.location.href = 'post.html';
+    }, 1500)
 
   }
 
@@ -58,7 +61,26 @@ btn.addEventListener('click', async () => {
 google.addEventListener('click', async () => {
   await client.auth.signInWithOAuth({
     provider: 'google',
+    options: {
+					redirectTo: window.location.origin + '/post.html',
+					queryParams: { access_type: 'offline', prompt: 'consent' },
+				},
   })
 })
 
+let eye = document.getElementById('toggle-password')
+eye.addEventListener('click',()=>{
+ eye.classList.toggle('disappear')
+ if(eye.classList.contains('disappear')){
+  password.type = "text"
+  eye.innerText = "visibility"
+ }
+ else{
+  eye.innerHTML = "visibility_off"
+   password.type = "password"
+ }
+})
 
+
+
+ 
