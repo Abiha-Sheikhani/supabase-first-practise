@@ -21,7 +21,7 @@ let password = document.getElementById('password').value
     Swal.fire({
       icon: "warning",
       title: "Oops...",
-      text: "Please fill all the fields first!",
+      text: "Please fill all the fields first!"
     });
   }
   
@@ -41,13 +41,20 @@ console.log(data);
   else {
     Swal.fire({
       icon: "success",
-      title: "Signup Successfully!",
+      title: "Login Successfully!",
       showConfirmButton: false,
       timer: 1500
     });
+<<<<<<< HEAD
    setTimeout(() => {
       window.location.href = 'post.html';
     }, 1500)
+=======
+    setTimeout(() => {
+      window.location.href = 'post.html';
+    }, 1500)
+
+>>>>>>> ec0f4b101fc7e29c9b3538c07c91cbaf4adb2593
   }
   
 })
